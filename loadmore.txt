@@ -1,0 +1,16 @@
+<!--Di default viene anche agganciato un hook per l'init delle funzioni ajax di load more.
+[Vedi la documentazione dell'helpers JS](https://github.com/F-technology-srl/ftechnology-wphelpers.git).
+È possibile fare un override di tale hook nel segunete modo:
+```php
+add_action('after_setup_theme', function () {
+
+    // Creo un'istanza
+    $ftechnologWpHelpers = new ftechnologWpHelpers();
+    $ftechnologWpHelpers->overrideLoadMoreAction(function(){
+        // .. fai quello che vuoi
+    });
+
+});
+```-->
+
+## Others usage
