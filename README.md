@@ -11,7 +11,10 @@ Assicurati che tutte le dipendenze siano state installate prima di procedere:
 
 ## Helpers installation
 
-Aggiungi al composer.json del tuo progetto le seguenti righe..
+Aggiungi al composer.json del tuo progetto le seguenti righe.
+Per poter accedere alla repo privata devi prima effettuare i seguenti passaggi per configurare la connessione via SSH
+https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh
+Se su GitHub hai attivato il 2FA (fortemente consigliato) sull'aggiornamento delle dipendenze ti chiederà di aggiungere il token, segui le istruzioni negli alert che il composer ti propone
 
 ```json
   "require": {
@@ -22,7 +25,7 @@ Aggiungi al composer.json del tuo progetto le seguenti righe..
   "repositories":[
     {
       "type": "vcs",
-      "url" : "github:F-technology-srl/ftechnology-wphelpers.git"
+      "url": "git@github.com:F-technology-srl/ftechnology-wphelpers.git"
     }
   ]
 ```
@@ -51,7 +54,7 @@ use Ftechnology\WPHelpers\WP as ftechnologyWpHelpers;
 add_action('after_setup_theme', function () {
     
     // Creo un'istanza
-    $ftechnologWpHelpers = new ftechnologWpHelpers();
+    $ftechnologWpHelpers = new ftechnologyWpHelpers();
     
     /**
     * Personalizza la schermata di login di WordPress
@@ -114,6 +117,7 @@ self::getAltTag($forceTitle = false, $id = 0);
 ```
 
 ### Utils Helper usage
+Nell'`Utils` sono presenti funzioni di utilità come debug, gestione delle date, array sorting ecc.
 
 ```php
 use \Ftechnology\WPHelpers\Utils;
