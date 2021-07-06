@@ -27,11 +27,11 @@ class Utils
      * @param bool $height
      * @return bool|string
      */
-    public static function debug($obj, $print = true, $abs = false, $zIndex = 800, $height = false)
+    public static function debug($obj, $print = true, $abs = false, $zIndex = 9999, $height = false)
     {
         $styleAbs = '';
         if ($abs) {
-            $styleAbs = '; position:fixed; z-index:' . $zIndex . '; width: 400px; height: 200px; overflow-y: scroll; overflow-x: hidden; bottom: 0; left: 0; opacity:0.9';
+            $styleAbs = '; position:fixed; z-index:' . $zIndex . '; width: 100%; height: 95vh; overflow-y: scroll; overflow-x: hidden; bottom: 0; left: 0; opacity:0.9';
         }
 
         $extraStyle = '';
