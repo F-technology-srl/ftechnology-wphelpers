@@ -12,11 +12,6 @@ Assicurati che tutte le dipendenze siano state installate prima di procedere:
 ## Helpers installation
 
 Aggiungi al composer.json del tuo tema le seguenti righe.
-Per poter accedere alla repo privata devi prima configurare la connessione via SSH
-
-Guida qui :point_right: [`Connecting to GitHub with SSH`](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
-
-:key: Se su GitHub hai attivato il 2FA (fortemente consigliato) sull'aggiornamento delle dipendenze ti chiederà di aggiungere il token, segui le istruzioni negli alert che il composer ti propone
 
 ```json
   "require": {
@@ -32,7 +27,7 @@ Guida qui :point_right: [`Connecting to GitHub with SSH`](https://docs.github.co
   ]
 ```
 
-..ed esegui l'update per scaricare le dipendenze via composer 
+quindi puoi aggiornare le dipendenze 
 
 ```shell
 # @ app/themes/ or wp-content/themes/
