@@ -543,7 +543,12 @@ class WP
                         }
                     }
                 } else if (isset($_GET['post']) or isset($_POST['post_ID'])) {
-                    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+                    if (isset($_GET['post'])) {
+                        $post_id = $_GET['post'];
+                    } elseif (isset($_POST['post_ID'])) {
+                        $post_id = $_POST['post_ID'];
+                    }
+
                     if (!isset($post_id)) {
                         return;
                     }
