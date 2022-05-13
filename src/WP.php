@@ -542,9 +542,11 @@ class WP
                             remove_post_type_support($type, 'editor');
                         }
                     }
-                } else if (isset($_GET['post']) or isset($_GET['post']) or isset($_POST['post_ID'])) {
+                } else if (isset($_GET['post']) or isset($_POST['post_ID'])) {
                     $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
-                    if (!isset($post_id)) return;
+                    if (!isset($post_id)) {
+                        return;
+                    }
                     $template_file = get_post_meta($post_id, '_wp_page_template', true);
                     $post = get_post($post_id);
 
