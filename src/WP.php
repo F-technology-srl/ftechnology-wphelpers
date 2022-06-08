@@ -555,7 +555,15 @@ class WP
                     $template_file = get_post_meta($post_id, '_wp_page_template', true);
                     $post = get_post($post_id);
 
-                    if (in_array($post->post_type, $postTypes) or in_array($template_file, $templates) or in_array($post_id, $ids)) {
+                    if($post) {
+                        if(!empty($post->post_type)) {
+                            if(in_array($post->post_type, $postTypes)) {
+                                remove_post_type_support($post->post_type, 'editor');
+                            }
+                        }
+                    }
+
+                    if (in_array($template_file, $templates) or in_array($post_id, $ids)) {
                         remove_post_type_support($post->post_type, 'editor');
                     }
 
